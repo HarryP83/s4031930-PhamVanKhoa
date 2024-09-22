@@ -140,6 +140,9 @@ function draw() {
 }
 
 function mousePressed() {
+    if (getAudioContext().state !== 'running') {
+    getAudioContext().resume();
+  }
   if (mouseX > buttonX && mouseX < buttonX + buttonSize && mouseY > buttonY && mouseY < buttonY + buttonSize) {
     isVolumeOn = !isVolumeOn; 
 
